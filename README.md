@@ -78,7 +78,8 @@ create table T (
 ```
 
 The resulting Clickhouse schema can be used to create the table in a number of ways.  The simplest 
-is to use the Clickhouse command line client.  For example:
+is to use the Clickhouse command line client.  For example (**note that this will drop the table
+if it exists as can be seen in the generated code above**):
 
 ```
 cat /tmp/clickhouse_schema.sql | clickhouse-client --multiquery
