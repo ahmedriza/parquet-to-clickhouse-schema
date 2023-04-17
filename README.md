@@ -65,7 +65,7 @@ The Clickhouse schema that's generated will be as follows:
 ```
 drop table if exists T;
 create table T (
-    id Nullable(Int32)
+    id Int32
     , b Nullable(String)
     , c Tuple(
         a Nullable(String)
