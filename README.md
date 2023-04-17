@@ -41,3 +41,6 @@ is to use the Clickhouse command line client.  For example:
 ```
 cat /tmp/clickhouse_schema.sql | clickhouse-client --multiquery
 ```
+
+Note that the `clickhouse-client` may need additional parameters such as as username and 
+password, depending on the way Clickhouse is configured.
