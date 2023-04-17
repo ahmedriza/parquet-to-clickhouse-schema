@@ -383,7 +383,7 @@ mod test {
         let file = File::create(parquet_path)?;
         let props = WriterProperties::builder().build();
         let mut writer = ArrowWriter::try_new(file, batch.schema(), Some(props))?;
-        writer.write(&batch)?;
+        writer.write(batch)?;
         writer.close()?;
         Ok(())
     }
