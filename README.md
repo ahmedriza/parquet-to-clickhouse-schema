@@ -25,3 +25,12 @@ Options:
   -h, --help
           Print help
 ```
+
+For example, if we have a Parquet file "/tmp/p.parquet" and want to generate the Clickhouse schema
+to a file named "/tmp/clickhouse_schema.sql" for a table named "Sales" with primary key "id", 
+run as follows:
+
+```
+cargo run -- --parquet-path /tmp/p.parquet --clickhouse-schema-path /tmp/clickhouse_schema.sql \
+--table-name Sales --primary-key id
+```
