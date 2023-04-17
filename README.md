@@ -26,8 +26,8 @@ Options:
           Print help
 ```
 
-For example, if we have a Parquet file "/tmp/p.parquet" and want to generate the Clickhouse schema
-to a file named "/tmp/clickhouse_schema.sql" for a table named "Sales" with primary key "id", 
+For example, if we have a Parquet file `/tmp/p.parquet` and want to generate the Clickhouse schema
+to a file named `/tmp/clickhouse_schema.sql` for a table named `Sales` with primary key `id`, 
 run as follows:
 
 ```
