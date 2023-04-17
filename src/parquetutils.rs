@@ -298,7 +298,7 @@ mod test {
     use std::{
         fs::File,
         io::{BufReader, Read},
-        path::Path,
+        path::{Path, PathBuf},
         sync::Arc,
     };
 
@@ -322,9 +322,11 @@ mod test {
         let batch = create_record_batch()?;
 
         let parquet_path = tmp_dir.path().join("p.parquet");
-        let clickhouse_schema_path = tmp_dir.path().join("clickhouse_schema.sql");
+        // let clickhouse_schema_path = tmp_dir.path().join("clickhouse_schema.sql");
+        let clickhouse_schema_path = PathBuf::from("/tmp/clickhouse_schema.sql");
 
-        write_parquet(batch, &parquet_path)?;
+        write_parquet(&batch, &parquet_path)?;
+        write_parquet(&batch, "/tmp/p.parquet")?;
 
         ParquetUtils::parquet_schema_to_clickhouse(
             parquet_path,
@@ -377,7 +379,7 @@ mod test {
         Ok(batch)
     }
 
-    fn write_parquet<P: AsRef<Path>>(batch: RecordBatch, parquet_path: P) -> anyhow::Result<()> {
+    fn write_parquet<P: AsRef<Path>>(batch: &RecordBatch, parquet_path: P) -> anyhow::Result<()> {
         let file = File::create(parquet_path)?;
         let props = WriterProperties::builder().build();
         let mut writer = ArrowWriter::try_new(file, batch.schema(), Some(props))?;
