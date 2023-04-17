@@ -58,14 +58,14 @@ a table named `T` with primary key `id`, run as follows:
 
 ```
 cargo run -- --parquet-path /tmp/p.parquet --clickhouse-schema-path /tmp/clickhouse_schema.sql \
---table-name Sales --primary-key id
+--table-name T --primary-key id
 ```
 
 The Clickhouse schema that's generated will be as follows:
 ```
 drop table if exists T;
 create table T (
-    a Nullable(Int32)
+    id Nullable(Int32)
     , b Nullable(String)
     , c Tuple(
         a Nullable(String)
