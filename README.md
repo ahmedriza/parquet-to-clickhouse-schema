@@ -85,5 +85,5 @@ if it exists as can be seen in the generated code above**):
 cat /tmp/clickhouse_schema.sql | clickhouse-client --multiquery
 ```
 
-Note that the `clickhouse-client` may need additional parameters such as as username and 
-password, depending on the way Clickhouse is configured.
+The `clickhouse-client` may need additional parameters such as as username and password, depending 
+on the way Clickhouse is configured.
