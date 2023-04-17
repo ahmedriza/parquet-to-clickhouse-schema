@@ -10,7 +10,8 @@ to expose them as `Nested` types in the Clickhouse schema.
 ```
 $ cargo run -- --help
 
-Usage: schemagen --parquet-path <PARQUET_PATH> --clickhouse-schema-path <CLICKHOUSE_SCHEMA_PATH> --table-name <TABLE_NAME> --primary-key <PRIMARY_KEY>
+Usage: schemagen --parquet-path <PARQUET_PATH> --clickhouse-schema-path <CLICKHOUSE_SCHEMA_PATH> \
+--table-name <TABLE_NAME> --primary-key <PRIMARY_KEY>
 
 Options:
       --parquet-path <PARQUET_PATH>
