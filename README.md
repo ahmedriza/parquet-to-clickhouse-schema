@@ -34,3 +34,10 @@ run as follows:
 cargo run -- --parquet-path /tmp/p.parquet --clickhouse-schema-path /tmp/clickhouse_schema.sql \
 --table-name Sales --primary-key id
 ```
+
+The resulting Clickhouse schema can be used to create the table in a number of ways.  The simplest 
+is to use the Clickhouse command line client.  For example:
+
+```
+cat /tmp/clickhouse_schema.sql | clickhouse-client --multiquery
+```
