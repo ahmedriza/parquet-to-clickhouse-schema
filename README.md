@@ -74,7 +74,7 @@ create table T (
     , d Nested (
         a Nullable(String)
     )
-) engine = MergeTree() primary key (foo);
+) engine = MergeTree() primary key (id);
 ```
 
 The resulting Clickhouse schema can be used to create the table in a number of ways.  The simplest 
