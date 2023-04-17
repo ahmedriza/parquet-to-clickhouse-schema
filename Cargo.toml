@@ -1,0 +1,18 @@
+[package]
+name = "parquet-to-clickhouse-schema"
+description = "Parquet Schema to Clickhouse Compatible Schema"
+version = "0.1.0"
+edition = "2021"
+
+# --------------------------------------------------------------------------------------------------
+
+[dependencies]
+anyhow = "1.0"
+parquet = "37.0"
+arrow = "37.0"
+
+[profile.release]
+debug = 1
+
+[dev-dependencies]
+tempfile = "3"
